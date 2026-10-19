@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.campo label {
+  font-weight: bold;
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filtro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.erro {
+  color: red;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #999;
+  padding: 6px;
+  text-align: left;
+}
+
+textarea, input[type="text"], input[type="date"], select { 
+    padding: 4px; 
+    font: inherit; 
+}
+.acoes { 
+    display: flex; gap: 8px; 
+}
+td .acoes { 
+    gap: 4px; 
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas tarefas - Controle de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="barra">
+    <h1>Minhas tarefas</h1>
+    <p>Olá, <strong id="nome-usuario"></strong> | <a href="#" id="sair">Sair</a></p>
+  </div>
+
+  <h2 id="titulo-form">Nova tarefa</h2>
+  <form id="form-tarefa">
+    <input type="hidden" id="tarefa-id">
+    <div class="campo">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" maxlength="100" required>
+    </div>
+    <div class="campo">
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" rows="3"></textarea>
+    </div>
+    <div class="campo">
+      <label for="prazo">Prazo:</label>
+      <input type="date" id="prazo">
+    </div>
+    <div class="campo">
+      <label for="status">Status:</label>
+      <select id="status">
+        <option value="PENDENTE">Pendente</option>
+        <option value="EM_ANDAMENTO">Em andamento</option>
+        <option value="CONCLUIDA">Concluída</option>
+      </select>
+    </div>
+    <p id="mensagem" class="erro"></p>
+    <div class="acoes">
+      <button type="submit" id="btn-salvar">Adicionar tarefa</button>
+      <button type="button" id="btn-cancelar" hidden>Cancelar edição</button>
+    </div>
+  </form>
+
+  <hr>
+
+  <form id="form-filtro" class="filtro">
+    <label for="filtro-status">Filtrar por status:</label>
+    <select id="filtro-status">
+      <option value="">Todos</option>
+      <option value="PENDENTE">Pendente</option>
+      <option value="EM_ANDAMENTO">Em andamento</option>
+      <option value="CONCLUIDA">Concluída</option>
+    </select>
+    <button type="submit">Filtrar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Criação</th>
+        <th>Prazo</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="lista-tarefas"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
